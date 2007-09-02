@@ -5,10 +5,11 @@
 
 %include	/usr/lib/rpm/macros.php
 Summary:	Dynamic Internet Messaging Program (DIMP)
+Summary(pl.UTF-8):	Program do dynamicznej komunikacji przez Internet (DIMP)
 Name:		horde-%{_hordeapp}
 Version:	1.0
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
-License:	GPL v2 (CHECK IT FIRST, could be ASL)
+License:	GPL v2
 Group:		Applications/WWW
 # due builder limitations can't have complex macros in Source0
 Source0:	ftp://ftp.horde.org/pub/dimp/%{_hordeapp}-h3-%{version}-%{_rc}.tar.gz
@@ -35,17 +36,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	%{_webapps}/%{_webapp}
 
 %description
-DIMP (Dynamic Internet Messaging Program, or Dynamic IMP) is a PHP-based
-webmail system and a component of the Horde project.  DIMP is a version of the
-webmail client IMP utilizing AJAX-like technologies to allow a more dynamic
-user experience than traditionally offered via IMP.
+DIMP (Dynamic Internet Messaging Program, or Dynamic IMP) is a
+PHP-based webmail system and a component of the Horde project. DIMP is
+a version of the webmail client IMP utilizing AJAX-like technologies
+to allow a more dynamic user experience than traditionally offered via
+IMP.
 
 The Horde Project writes web applications in PHP and releases them
 under the GNU Public License. For more information (including help
 with DIMP) please visit <http://www.horde.org/>.
 
 %description -l pl.UTF-8
-DIMP
+DIMP (Dynamic Internet Messaging Program lub Dynamic IMP) to oparty na
+PHP system webmaila (poczty przez WWW) i komponent projektu Horde.
+DIMP to wersja klienta poczty przez WWW IMP wykorzystująca techlologie
+typu AJAX do zapewnienia bardziej dynamicznego zachowania niż
+tradycyjnie oferowane przez IMP-a.
 
 Projekt Horde tworzy aplikacje WWW w PHP i wydaje je na licencji GNU
 General Public License. Więcej informacji (włącznie z pomocą dla

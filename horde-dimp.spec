@@ -1,20 +1,19 @@
-%define	_hordeapp dimp
-#define	_snap	2005-08-01
-%define	_rc		alpha
-%define	_rel	1
+%define		hordeapp dimp
+#define		_snap	2005-08-01
+%define		subver	rc2
+%define		rel	1
 
 %include	/usr/lib/rpm/macros.php
 Summary:	Dynamic Internet Messaging Program (DIMP)
 Summary(pl.UTF-8):	Program do dynamicznej komunikacji przez Internet (DIMP)
-Name:		horde-%{_hordeapp}
+Name:		horde-%{hordeapp}
 Version:	1.0
-Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
+Release:	%{?subver:0.%{subver}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{rel}
 License:	GPL v2
 Group:		Applications/WWW
-# due builder limitations can't have complex macros in Source0
-Source0:	ftp://ftp.horde.org/pub/dimp/%{_hordeapp}-h3-%{version}-%{_rc}.tar.gz
-# Source0-md5:	853a8423310f1bf2d332d8933b361f28
-Source1:	%{_hordeapp}.conf
+Source0:	ftp://ftp.horde.org/pub/dimp/%{hordeapp}-h3-%{version}-%{subver}.tar.gz
+# Source0-md5:	95cdef7eaf9add4d06727597708dfcea
+Source1:	%{hordeapp}.conf
 URL:		http://www.horde.org/dimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
@@ -30,9 +29,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreq	'pear(Horde.*)'
 
 %define		hordedir	/usr/share/horde
-%define		_appdir		%{hordedir}/%{_hordeapp}
+%define		_appdir		%{hordedir}/%{hordeapp}
 %define		_webapps	/etc/webapps
-%define		_webapp		horde-%{_hordeapp}
+%define		_webapp		horde-%{hordeapp}
 %define		_sysconfdir	%{_webapps}/%{_webapp}
 
 %description
@@ -58,7 +57,7 @@ General Public License. Więcej informacji (włącznie z pomocą dla
 DIMP) można znaleźć na stronie <http://www.horde.org/>.
 
 %prep
-%setup -qcT -n %{?_snap:%{_hordeapp}-%{_snap}}%{!?_snap:%{_hordeapp}-%{version}%{?_rc:-%{_rc}}}
+%setup -qcT -n %{?_snap:%{hordeapp}-%{_snap}}%{!?_snap:%{hordeapp}-%{version}%{?subver:-%{subver}}}
 tar zxf %{SOURCE0} --strip-components=1
 
 rm -f {,*/}.htaccess

@@ -52,7 +52,7 @@ General Public License. Więcej informacji (włącznie z pomocą dla
 DIMP) można znaleźć na stronie <http://www.horde.org/>.
 
 %prep
-%setup -q
+%setup -q -n %{_hordeapp}-h3-%{version}
 
 rm -f {,*/}.htaccess
 for i in config/*.dist; do

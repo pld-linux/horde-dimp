@@ -14,7 +14,6 @@ Source1:	%{hordeapp}.conf
 URL:		http://www.horde.org/dimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
-BuildRequires:	tar >= 1:1.15.1
 Requires:	apache(mod_access)
 Requires:	horde >= 3.0
 Requires:	webapps

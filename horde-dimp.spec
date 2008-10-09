@@ -1,18 +1,15 @@
 %define		hordeapp dimp
-#define		_snap	2005-08-01
-%define		subver	rc2
-%define		rel	1
 
 %include	/usr/lib/rpm/macros.php
 Summary:	Dynamic Internet Messaging Program (DIMP)
 Summary(pl.UTF-8):	Program do dynamicznej komunikacji przez Internet (DIMP)
 Name:		horde-%{hordeapp}
-Version:	1.0
-Release:	%{?subver:0.%{subver}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{rel}
+Version:	1.1
+Release:	0.1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	ftp://ftp.horde.org/pub/dimp/%{hordeapp}-h3-%{version}-%{subver}.tar.gz
-# Source0-md5:	95cdef7eaf9add4d06727597708dfcea
+Source0:	ftp://ftp.horde.org/pub/dimp/%{hordeapp}-h3-%{version}.tar.gz
+# Source0-md5:	5ad975dc76b7b75778508ace19b6a39e
 Source1:	%{hordeapp}.conf
 URL:		http://www.horde.org/dimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
@@ -57,8 +54,7 @@ General Public License. Więcej informacji (włącznie z pomocą dla
 DIMP) można znaleźć na stronie <http://www.horde.org/>.
 
 %prep
-%setup -qcT -n %{?_snap:%{hordeapp}-%{_snap}}%{!?_snap:%{hordeapp}-%{version}%{?subver:-%{subver}}}
-tar zxf %{SOURCE0} --strip-components=1
+%setup -q
 
 rm -f {,*/}.htaccess
 for i in config/*.dist; do

@@ -4,12 +4,12 @@
 Summary:	Dynamic Internet Messaging Program (DIMP)
 Summary(pl.UTF-8):	Program do dynamicznej komunikacji przez Internet (DIMP)
 Name:		horde-%{hordeapp}
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/dimp/%{hordeapp}-h3-%{version}.tar.gz
-# Source0-md5:	e1625001c0520caa220ba739a0b59637
+# Source0-md5:	6d7605cd927eabf42de3cdb582237d6e
 Source1:	%{hordeapp}.conf
 URL:		http://www.horde.org/dimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98

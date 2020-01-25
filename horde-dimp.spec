@@ -1,6 +1,5 @@
 %define		hordeapp dimp
 
-%include	/usr/lib/rpm/macros.php
 Summary:	Dynamic Internet Messaging Program (DIMP)
 Summary(pl.UTF-8):	Program do dynamicznej komunikacji przez Internet (DIMP)
 Name:		horde-%{hordeapp}
